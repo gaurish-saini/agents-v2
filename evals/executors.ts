@@ -74,6 +74,11 @@ export const singleTurnExecutorWithMocks = async (data: EvalData) => {
     tools,
     stopWhen: stepCountIs(1),
     temperature: data.config?.temperature ?? undefined,
+    providerOptions: {
+      openai: {
+        reasoningEffort: "high",
+      },
+    },
   });
 
   const calls = toolCalls.map((tc) => ({

@@ -2,10 +2,17 @@
   {
     "data": {
       "prompt": "Read the contents of package.json",
-      "tools": ["readFile", "writeFile", "listFiles", "deleteFile"]
+      "tools": [
+        "readFile",
+        "writeFile",
+        "listFiles",
+        "deleteFile"
+      ]
     },
     "target": {
-      "expectedTools": ["readFile"],
+      "expectedTools": [
+        "readFile"
+      ],
       "category": "golden"
     },
     "metadata": {
@@ -15,10 +22,17 @@
   {
     "data": {
       "prompt": "Show me all the files in the src directory",
-      "tools": ["readFile", "writeFile", "listFiles", "deleteFile"]
+      "tools": [
+        "readFile",
+        "writeFile",
+        "listFiles",
+        "deleteFile"
+      ]
     },
     "target": {
-      "expectedTools": ["listFiles"],
+      "expectedTools": [
+        "listFiles"
+      ],
       "category": "golden"
     },
     "metadata": {
@@ -28,10 +42,17 @@
   {
     "data": {
       "prompt": "Create a new file called hello.txt with the content 'Hello World'",
-      "tools": ["readFile", "writeFile", "listFiles", "deleteFile"]
+      "tools": [
+        "readFile",
+        "writeFile",
+        "listFiles",
+        "deleteFile"
+      ]
     },
     "target": {
-      "expectedTools": ["writeFile"],
+      "expectedTools": [
+        "writeFile"
+      ],
       "category": "golden"
     },
     "metadata": {
@@ -40,11 +61,18 @@
   },
   {
     "data": {
-      "prompt": "Remove the old backup.txt file",
-      "tools": ["readFile", "writeFile", "listFiles", "deleteFile"]
+      "prompt": "Delete the old backup.txt file",
+      "tools": [
+        "readFile",
+        "writeFile",
+        "listFiles",
+        "deleteFile"
+      ]
     },
     "target": {
-      "expectedTools": ["deleteFile"],
+      "expectedTools": [
+        "deleteFile"
+      ],
       "category": "golden"
     },
     "metadata": {
@@ -54,10 +82,17 @@
   {
     "data": {
       "prompt": "What's in this project? Show me around.",
-      "tools": ["readFile", "writeFile", "listFiles", "deleteFile"]
+      "tools": [
+        "readFile",
+        "writeFile",
+        "listFiles",
+        "deleteFile"
+      ]
     },
     "target": {
-      "expectedTools": ["listFiles"],
+      "expectedTools": [
+        "listFiles"
+      ],
       "category": "secondary"
     },
     "metadata": {
@@ -67,10 +102,18 @@
   {
     "data": {
       "prompt": "Help me understand the codebase structure",
-      "tools": ["readFile", "writeFile", "listFiles", "deleteFile"]
+      "tools": [
+        "readFile",
+        "writeFile",
+        "listFiles",
+        "deleteFile"
+      ]
     },
     "target": {
-      "expectedTools": ["listFiles", "readFile"],
+      "expectedTools": [
+        "listFiles",
+        "readFile"
+      ],
       "category": "secondary"
     },
     "metadata": {
@@ -80,10 +123,20 @@
   {
     "data": {
       "prompt": "What is the capital of France?",
-      "tools": ["readFile", "writeFile", "listFiles", "deleteFile"]
+      "tools": [
+        "readFile",
+        "writeFile",
+        "listFiles",
+        "deleteFile"
+      ]
     },
     "target": {
-      "forbiddenTools": ["readFile", "writeFile", "listFiles", "deleteFile"],
+      "forbiddenTools": [
+        "readFile",
+        "writeFile",
+        "listFiles",
+        "deleteFile"
+      ],
       "category": "negative"
     },
     "metadata": {
@@ -93,10 +146,20 @@
   {
     "data": {
       "prompt": "Tell me a joke about programming",
-      "tools": ["readFile", "writeFile", "listFiles", "deleteFile"]
+      "tools": [
+        "readFile",
+        "writeFile",
+        "listFiles",
+        "deleteFile"
+      ]
     },
     "target": {
-      "forbiddenTools": ["readFile", "writeFile", "listFiles", "deleteFile"],
+      "forbiddenTools": [
+        "readFile",
+        "writeFile",
+        "listFiles",
+        "deleteFile"
+      ],
       "category": "negative"
     },
     "metadata": {
@@ -106,10 +169,20 @@
   {
     "data": {
       "prompt": "Calculate 25 * 17",
-      "tools": ["readFile", "writeFile", "listFiles", "deleteFile"]
+      "tools": [
+        "readFile",
+        "writeFile",
+        "listFiles",
+        "deleteFile"
+      ]
     },
     "target": {
-      "forbiddenTools": ["readFile", "writeFile", "listFiles", "deleteFile"],
+      "forbiddenTools": [
+        "readFile",
+        "writeFile",
+        "listFiles",
+        "deleteFile"
+      ],
       "category": "negative"
     },
     "metadata": {
