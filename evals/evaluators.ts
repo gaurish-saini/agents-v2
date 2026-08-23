@@ -42,8 +42,22 @@ export const llmJudge = async (
           - 4-6: Response partially addresses the task
           - 1-3: Response is mostly incorrect or irrelevant`,
       },
+      {
+        role: "user",
+        content: `Task: ${target.originalTask}
+        
+        Tool Called: ${JSON.stringify(output.toolCallOrder)},
+        Tool Results provided: ${JSON.stringify(target.mockToolResults)},
+        
+        Agent's final answer: ${output.text},
+
+        Evaluate if this response correctly uses the tool results to answer the task.
+        `,
+      },
     ],
   });
+
+  return result.object.score / 10;
 };
 
 /**
