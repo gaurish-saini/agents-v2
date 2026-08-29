@@ -5,12 +5,16 @@
       "mockTools": {
         "readFile": {
           "description": "Read the contents of a file at the specified path",
-          "parameters": { "path": "string" },
+          "parameters": {
+            "path": "string"
+          },
           "mockReturn": "{ \"name\": \"ai-agent-course\", \"version\": \"1.0.0\", \"description\": \"Build an AI agent from scratch\" }"
         },
         "shell": {
           "description": "Execute a shell command and return its output",
-          "parameters": { "command": "string" },
+          "parameters": {
+            "command": "string"
+          },
           "mockReturn": "command output here"
         }
       },
@@ -20,8 +24,12 @@
     },
     "target": {
       "originalTask": "Read package.json and tell me the project name",
-      "expectedToolOrder": ["readFile"],
-      "forbiddenTools": ["shell"],
+      "expectedToolOrder": [
+        "readFile"
+      ],
+      "forbiddenTools": [
+        "shell"
+      ],
       "mockToolResults": {
         "readFile": "{ \"name\": \"ai-agent-course\", \"version\": \"1.0.0\", \"description\": \"Build an AI agent from scratch\" }"
       },
@@ -34,19 +42,32 @@
   {
     "data": {
       "messages": [
-        { "role": "user", "content": "I'm working on a Node.js project and need help understanding it" },
-        { "role": "assistant", "content": "I'd be happy to help you understand your Node.js project! What would you like to know about it?" },
-        { "role": "user", "content": "List the files in the src directory and then read the main entry point" }
+        {
+          "role": "user",
+          "content": "I'm working on a Node.js project and need help understanding it"
+        },
+        {
+          "role": "assistant",
+          "content": "I'd be happy to help you understand your Node.js project! What would you like to know about it?"
+        },
+        {
+          "role": "user",
+          "content": "List the files in the src directory and then read the main entry point"
+        }
       ],
       "mockTools": {
         "listFiles": {
           "description": "List all files and directories in the specified directory path",
-          "parameters": { "directory": "string" },
+          "parameters": {
+            "directory": "string"
+          },
           "mockReturn": "index.ts\nApp.tsx\ncomponents/\nutils/"
         },
         "readFile": {
           "description": "Read the contents of a file at the specified path",
-          "parameters": { "path": "string" },
+          "parameters": {
+            "path": "string"
+          },
           "mockReturn": "import { App } from './App';\n\nconsole.log('Starting application...');\nApp.run();"
         }
       },
@@ -56,7 +77,10 @@
     },
     "target": {
       "originalTask": "List the files in the src directory and then read the main entry point",
-      "expectedToolOrder": ["listFiles", "readFile"],
+      "expectedToolOrder": [
+        "listFiles",
+        "readFile"
+      ],
       "mockToolResults": {
         "listFiles": "index.ts\nApp.tsx\ncomponents/\nutils/",
         "readFile": "import { App } from './App';\n\nconsole.log('Starting application...');\nApp.run();"
@@ -73,12 +97,16 @@
       "mockTools": {
         "listFiles": {
           "description": "List all files and directories in the specified directory path",
-          "parameters": { "directory": "string" },
+          "parameters": {
+            "directory": "string"
+          },
           "mockReturn": "index.ts\nApp.tsx\ncomponents/"
         },
         "shell": {
           "description": "Execute a shell command and return its output",
-          "parameters": { "command": "string" },
+          "parameters": {
+            "command": "string"
+          },
           "mockReturn": "index.ts  App.tsx  components/"
         }
       },
@@ -88,8 +116,12 @@
     },
     "target": {
       "originalTask": "What files are in the src directory?",
-      "expectedToolOrder": ["listFiles"],
-      "forbiddenTools": ["shell"],
+      "expectedToolOrder": [
+        "listFiles"
+      ],
+      "forbiddenTools": [
+        "shell"
+      ],
       "mockToolResults": {
         "listFiles": "index.ts\nApp.tsx\ncomponents/"
       },
