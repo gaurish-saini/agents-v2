@@ -38,3 +38,48 @@ export const writeFile = tool({
     }
   },
 });
+
+export const listFiles = tool({
+  description:
+    "List all the files and directories in the specified directory path",
+  inputSchema: z.object({
+    directory: z
+      .string()
+      .describe("The directory path to list the contents of.")
+      .default("."),
+  }),
+  execute: async ({ directory }) => {
+    try {
+      const entries = await fs.readdir(directory, { withFileTypes: true });
+      const items = entries.map((entry) => {
+        const type = entry.isDirectory() ? "[dir]" : "[file]";
+        return `${type} ${entry.name}`;
+      });
+      return items.length > 0
+        ? items.join("\n")
+        : `Directory ${directory} is empty`;
+    } catch (e) {
+      return `Could not list the contents in this directory, here is the node.js error: ${e}`;
+    }
+  },
+});
+
+export const deleteFile = tool({
+  description:
+    "Delete a file at the specified path. Use with caution as this is irreversible.",
+  inputSchema: z.object({
+    path: z.string().describe("The path to the file to delete"),
+  }),
+  execute: async ({ path: filePath }: { path: string }) => {
+    try {
+      await fs.unlink(filePath);
+      return `Successfully deleted ${filePath}`;
+    } catch (error) {
+      const err = error as NodeJS.ErrnoException;
+      if (err.code === "ENOENT") {
+        return `Error: File not found: ${filePath}`;
+      }
+      return `Error deleting file: ${err.message}`;
+    }
+  },
+});
