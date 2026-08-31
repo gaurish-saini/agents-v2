@@ -27,7 +27,7 @@ evaluate({
   },
 
   config: {
-    projectApiKey: process.env.LMNR_API_KEY,
+    projectApiKey: process.env.LMNR_PROJECT_API_KEY,
   },
   groupName: "agent-multiturn",
 });
